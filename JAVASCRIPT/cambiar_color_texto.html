@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Función colores</title>
+<script>
+function cambiarColor(colorFondo, colorTexto){
+    document.bgColor = colorFondo;
+    document.fgColor = colorTexto;
+}
+document.write ("<h1>Texto para pruebas</h1>")
+</script>
+</head>
+<body>
+    <input type="button" value="Página Roja" onclick="cambiarColor('red','blue');">
+    <input type="button" value="Página Verde" onclick="cambiarColor('green', 'red');">
+    <input type="button" value="Página Azul" onclick="cambiarColor('blue','olive');">
+    <input type="button" value="Página Amarilla" onclick="cambiarColor('yellow','blue');">
+    <input type="button" value="Página Negra" onclick="cambiarColor('black','red');">
+    <input type="button" value="Página Blanca" onclick="cambiarColor('white','blue');">
+</body>
+</html>

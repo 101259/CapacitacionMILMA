@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Retardo2</title>
+</head>
+<body>
+    <script>
+     var fecha_1=new Date();
+    var respuesta = prompt ("¿Quien descubrió America?","");
+
+    var fecha_2 =new Date();
+    var tiempo =fecha_2 - fecha_1;
+
+if (tiempo >999) {//Si hay más de un segundo
+    var segundos= parseInt (tiempo/1000);
+    tiempo -= (segundos*1000); //tiempo=tiempo-(segundos*1000);
+}else{
+    var segundos =0;
+}
+if (segundos > 59){// si hay más de un minuto.
+    var minutos= parseInt(segundos/60);
+    segundos -= (minutos*60);
+} else{ minutos=0;
+
+  }  if (minutos > 59){// si hay más de una hora.
+    var horas= parseInt(minutos/60);
+    minutos -=(horas*60);
+} else{ horas= 0;
+
+}
+    document.write ("Ha tardado " + horas + "horas" + minutos + "minutos, "+segundos+" segundos," + tiempo+ "milisegundos.");
+    
+    
+    
+    </script>
+</body>
+</html>
