@@ -1,0 +1,168 @@
+
+<!-- Ejercios Java nº 8
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Funciones basicas (Par o impar)</title>
+
+<script type="text/javascript">
+var numero = prompt("Introduce un número entero");
+
+var resultado = parImpar(numero);
+alert("El número "+numero+" es "+resultado);
+
+function parImpar(numero) {
+  if(numero % 2 == 0) {
+    return "par";
+  }
+  else {
+    return "impar";
+  }
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ejercicio 10 - Detección de palíndromos</title>
+
+<script type="text/javascript">
+
+function palindromo(cadena) {
+
+  var resultado = "La cadena \""+cadena+"\" \n";
+
+  // Pasar a minusculas la cadena
+  var cadenaOriginal = cadena.toLowerCase();
+
+  // Convertir la cadena en un array
+  var letrasEspacios = cadenaOriginal.split("");
+
+  // Eliminar los espacios en blanco (este paso es demasiado largo ya que no se utiliza la funcion "replace")
+  var cadenaSinEspacios = "";
+  for(i in letrasEspacios) {
+    if(letrasEspacios[i] != " ") {
+      cadenaSinEspacios += letrasEspacios[i];
+    }
+  }
+
+  var letras = cadenaSinEspacios.split("");
+  var letrasReves = cadenaSinEspacios.split("").reverse();
+
+  // Este paso tambien es muy largo porque no se utiliza la sentencia "break"
+  var iguales = true;
+  for(i in letras) {
+    if(letras[i] == letrasReves[i]) {
+      // Todo bien
+    }
+    else {
+      // Alguna letra es distinta, por lo que ya no es un palindromo
+      iguales = false;
+    }
+  }
+
+  if(iguales) {
+    resultado += " es un palíndromo";
+  }
+  else {
+    resultado += " no es un palíndromo";
+  }
+
+  return resultado;
+}
+palindromo.prompt  Indica tu palabra o
+alert(palindromo("Alli ves a sevilla"));
+alert(palindromo("Esta frase no se parece a ningun palindromo"));
+</script>
+</head>
+
+<body>
+
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Global y Local</title>
+</head>
+<body>
+    <script>
+
+     var valor=10;
+     function doblar (dato){
+         dato *=2; 
+         return dato;
+     }
+        document.write ("El valor es "+ valor + "<br>");
+
+        var doble =doblar (valor);      
+
+        document.write ("El valor sigue siendo  " + valor);
+
+        </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fechas</title>
+</head>
+<body>
+    <script>
+
+    var fecha = new Date();
+    document.write (fecha +"<br>");
+
+    var mes = fecha.getMonth();
+    fecha.setMonth (mes+3);
+
+    document.write(fecha);
+
+
+    </script>
+
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Función colores</title>
+<script>
+function cambiarColor(colorFondo, colorTexto){
+    document.bgColor = colorFondo;
+    document.fgColor = colorTexto;
+}
+document.write ("<h1>Texto para pruebas</h1>")
+</script>
+</head>
+<body>
+    <input type="button" value="Página Roja" onclick="cambiarColor('red','blue');">
+    <input type="button" value="Página Verde" onclick="cambiarColor('green', 'red');">
+    <input type="button" value="Página Azul" onclick="cambiarColor('blue','olive');">
+    <input type="button" value="Página Amarilla" onclick="cambiarColor('yellow','blue');">
+    <input type="button" value="Página Negra" onclick="cambiarColor('black','red');">
+    <input type="button" value="Página Blanca" onclick="cambiarColor('white','blue');">
+</body>
+</html> 

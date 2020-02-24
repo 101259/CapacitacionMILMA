@@ -1,0 +1,389 @@
+
+<!-- Ejercios Java nº 8
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Funciones basicas (Par o impar)</title>
+
+<script type="text/javascript">
+var numero = prompt("Introduce un número entero");
+
+var resultado = parImpar(numero);
+alert("El número "+numero+" es "+resultado);
+
+function parImpar(numero) {
+  if(numero % 2 == 0) {
+    return "par";
+  }
+  else {
+    return "impar";
+  }
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ejercicio 10 - Detección de palíndromos</title>
+
+<script type="text/javascript">
+
+function palindromo(cadena) {
+
+  var resultado = "La cadena \""+cadena+"\" \n";
+
+  // Pasar a minusculas la cadena
+  var cadenaOriginal = cadena.toLowerCase();
+
+  // Convertir la cadena en un array
+  var letrasEspacios = cadenaOriginal.split("");
+
+  // Eliminar los espacios en blanco (este paso es demasiado largo ya que no se utiliza la funcion "replace")
+  var cadenaSinEspacios = "";
+  for(i in letrasEspacios) {
+    if(letrasEspacios[i] != " ") {
+      cadenaSinEspacios += letrasEspacios[i];
+    }
+  }
+
+  var letras = cadenaSinEspacios.split("");
+  var letrasReves = cadenaSinEspacios.split("").reverse();
+
+  // Este paso tambien es muy largo porque no se utiliza la sentencia "break"
+  var iguales = true;
+  for(i in letras) {
+    if(letras[i] == letrasReves[i]) {
+      // Todo bien
+    }
+    else {
+      // Alguna letra es distinta, por lo que ya no es un palindromo
+      iguales = false;
+    }
+  }
+
+  if(iguales) {
+    resultado += " es un palíndromo";
+  }
+  else {
+    resultado += " no es un palíndromo";
+  }
+
+  return resultado;
+}
+palindromo.prompt  Indica tu palabra o
+alert(palindromo("Alli ves a sevilla"));
+alert(palindromo("Esta frase no se parece a ningun palindromo"));
+</script>
+</head>
+
+<body>
+
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Global y Local</title>
+</head>
+<body>
+    <script>
+
+     var valor=10;
+     function doblar (dato){
+         dato *=2; 
+         return dato;
+     }
+        document.write ("El valor es "+ valor + "<br>");
+
+        var doble =doblar (valor);      
+
+        document.write ("El valor sigue siendo  " + valor);
+
+        </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fechas</title>
+</head>
+<body>
+    <script>
+
+    var fecha = new Date();
+    document.write (fecha +"<br>");
+
+    var mes = fecha.getMonth();
+    fecha.setMonth (mes+3);
+
+    document.write(fecha);
+
+
+    </script>
+
+
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Función colores</title>
+<script>
+function cambiarColor(colorFondo, colorTexto){
+    document.bgColor = colorFondo;
+    document.fgColor = colorTexto;
+}
+document.write ("<h1>Texto para pruebas</h1>")
+</script>
+</head>
+<body>
+    <input type="button" value="Página Roja" onclick="cambiarColor('red','blue');">
+    <input type="button" value="Página Verde" onclick="cambiarColor('green', 'red');">
+    <input type="button" value="Página Azul" onclick="cambiarColor('blue','olive');">
+    <input type="button" value="Página Amarilla" onclick="cambiarColor('yellow','blue');">
+    <input type="button" value="Página Negra" onclick="cambiarColor('black','red');">
+    <input type="button" value="Página Blanca" onclick="cambiarColor('white','blue');">
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dados</title>
+</head>
+<body>
+    <script>
+    function dados(){
+            var resultado=0;
+            do{
+                resultado= parseInt (Math.random()*100);
+            }
+            while (resultado<1 || resultado>20); 
+            alert ("El resultado es: "+resultado);  
+    } 
+
+        </script>
+        <input type="button" value="LANZAR DADOS"  onclick="dados();">
+
+
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Retardo2</title>
+</head>
+<body>
+    <script>
+     var fecha_1=new Date();
+    var respuesta = prompt ("¿Quien descubrió America?","");
+
+    var fecha_2 =new Date();
+    var tiempo =fecha_2 - fecha_1;
+
+if (tiempo >999) {//Si hay más de un segundo
+    var segundos= parseInt (tiempo/1000);
+    tiempo -= (segundos*1000); //tiempo=tiempo-(segundos*1000);
+}else{
+    var segundos =0;
+}
+if (segundos > 59){// si hay más de un minuto.
+    var minutos= parseInt(segundos/60);
+    segundos -= (minutos*60);
+} else{ minutos=0;
+
+  }  if (minutos > 59){// si hay más de una hora.
+    var horas= parseInt(minutos/60);
+    minutos -=(horas*60);
+} else{ horas= 0;
+
+}
+    document.write ("Ha tardado " + horas + "horas" + minutos + "minutos, "+segundos+" segundos," + tiempo+ "milisegundos.");
+
+    </script>
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dia semanal</title>
+</head>
+<body>
+
+    <script>
+        var dias = new Array ("Domingo","Lunes","Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
+        var fecha = new Date();
+        var dia  = fecha.getDay();    
+
+        alert ("El dia de la semana actual es:" + dias [dia]);
+
+    </script>
+
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=+, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anidadas</title>
+</head>
+<body>
+    <script>
+    function externa () {
+
+        document.write ("Esto está en la función externa <br>");
+
+        function interna (){
+            document.write ("Esto está en la función interna.");
+        }
+        interna ();
+    }
+    externa();
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 12 - DOM básico y atributos XHTML</title>
+
+<style type="text/css">
+.oculto { display: none; }
+.visible { display: inline; }
+</style>
+
+<script type="text/javascript">
+function muestra() {
+  var elemento = document.getElementById("adicional");
+  elemento.className = "visible";
+
+  var enlace = document.getElementById("enlace");
+  enlace.className = "oculto";
+}
+</script>
+</head>
+
+<body>
+
+<p id="texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. <span id="adicional" class="oculto">Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</span></p>
+<a id="enlace" href="#" onclick="muestra(); return false;">Seguir leyendo</a>
+
+</body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 11 - DOM básico</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var info = document.getElementById("informacion");
+
+  // Numero de enlaces de la pagina
+  var enlaces = document.getElementsByTagName("a");
+  info.innerHTML = "Numero de enlaces = "+enlaces.length;
+
+  // Direccion del penultimo enlace
+  var mensaje = "El penultimo enlace apunta a: "+enlaces[enlaces.length-2].href;
+  info.innerHTML = info.innerHTML + "<br/>" + mensaje;
+
+  // Numero de enlaces que apuntan a http://prueba
+  var contador = 0;
+  for(var i=0; i<enlaces.length; i++) {
+    // Es necesario comprobar los enlaces http://prueba y
+    // http://prueba/ por las diferencias entre navegadores
+    if(enlaces[i].href == "http://prueba" || enlaces[i].href == "http://prueba/") {
+      contador++;
+    }
+  }
+  info.innerHTML = info.innerHTML + "<br/>" + contador + " enlaces apuntan a http://prueba"
+
+  // Numero de enlaces del tercer párrafo
+  var parrafos = document.getElementsByTagName("p");
+  enlaces = parrafos[2].getElementsByTagName("a");
+  info.innerHTML = info.innerHTML + "<br/>" + "Numero de enlaces del tercer párrafo = "+enlaces.length;
+}
+</script>
+</head>
+
+<body>
+<div id="informacion" style="border:thin solid silver; padding:.5em"></div>
+<p>Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscing elit</a>. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. <a href="http://prueba2">Fusce porta</a>. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</p>
+
+<p>Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin consequat auctor diam. <a href="http://prueba">Ut bibendum blandit est</a>. Curabitur vestibulum. Nunc malesuada porttitor sapien. Aenean a lacus et metus venenatis porta. Suspendisse cursus, sem non dapibus tincidunt, lorem magna porttitor felis, id sodales dolor dolor sed urna. Sed rutrum nulla vitae tellus. Sed quis eros nec lectus tempor lacinia. Aliquam nec lectus nec neque aliquet dictum. Etiam <a href="http://prueba3">consequat sem quis massa</a>. Donec aliquam euismod diam. In magna massa, mattis id, pellentesque sit amet, porta sit amet, lectus. Curabitur posuere. Aliquam in elit. Fusce condimentum, arcu in scelerisque lobortis, ante arcu scelerisque mi, at cursus mi risus sed tellus.</p>
+
+<p>Donec sagittis, nibh nec ullamcorper tristique, pede velit feugiat massa, at sollicitudin justo tellus vitae justo. Vestibulum aliquet, nulla sit amet imperdiet suscipit, nunc erat laoreet est, a <a href="http://prueba">aliquam leo odio sed sem</a>. Quisque eget eros vehicula diam euismod tristique. Ut dui. Donec in metus sed risus laoreet sollicitudin. Proin et nisi non arcu sodales hendrerit. In sem. Cras id augue eu lorem dictum interdum. Donec pretium. Proin <a href="http://prueba4">egestas</a> adipiscing ligula. Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sed non lectus non est pellentesque</a> auctor.</p>
+</body>
+</html>--> 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 3 - Arrays simples</title>
+<script type="text/javascript">
+// Array que almacena los 12 meses del año
+var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+// Se muestra el nombre de cada mes
+alert(meses[0]);
+alert(meses[1]);
+alert(meses[2]);
+alert(meses[3]);
+alert(meses[4]);
+alert(meses[5]);
+alert(meses[6]);
+alert(meses[7]);
+alert(meses[8]);
+alert(meses[9]);
+alert(meses[10]);
+alert(meses[11]);
+</script>
+</head>
+
+<body>
+<p>Esta página muestra los 12 meses del año</p>
+</body>
+</html>
